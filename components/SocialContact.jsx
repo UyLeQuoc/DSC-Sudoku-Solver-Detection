@@ -6,12 +6,12 @@ function SocialContact() {
   return (
     <Social>
       <div className='title'>Contact: </div>
-      <a href='https://www.facebook.com/fptudsc' target="_blank">
+      <a href='https://www.facebook.com/fptudsc' target="_blank" rel="noopener noreferrer">
         <WrappedIcon>
           <FacebookFilled className='icon facebook-icon' />
         </WrappedIcon>
       </a>
-      <a href='https://www.youtube.com/@FPTUDeveloperStudentCommunity' target="_blank">
+      <a href='https://www.youtube.com/@FPTUDeveloperStudentCommunity' target="_blank" rel="noopener noreferrer">
         <WrappedIcon>
           <YoutubeFilled className='icon youtube-icon' />
         </WrappedIcon>
