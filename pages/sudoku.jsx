@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import { useState} from 'react'
 import styled from 'styled-components'
 import { Button, Col, Divider, message, Modal, Row, Space, Upload, UploadFile, UploadProps } from 'antd';
 import { ArrowRightOutlined, InboxOutlined } from '@ant-design/icons';
@@ -11,7 +11,7 @@ const getBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result as string);
+    reader.onload = () => resolve(reader.result);
     reader.onerror = error => reject(error);
 });
 
@@ -66,7 +66,7 @@ function SudokuModal() {
       console.log('Dropped files', e.dataTransfer.files);
     },
     listType:"picture",
-    maxCount: 1,
+    maxCount: 1
   };
 
   async function postData(url = '', data = {}) {
