@@ -7,7 +7,7 @@ import Link from 'next/link';
 import SudokuTable from '../components/SudokuTable';
 import SampleSudokuImage from '../components/SampleSudokuImage';
 
-const getBase64 = (file): Promise<string> =>
+const getBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -35,7 +35,7 @@ function SudokuModal() {
   const [previewTitle, setPreviewTitle] = useState('');
   const handleCancel = () => setPreviewOpen(false);
 
-  const handlePreview = async (file: any) => {
+  const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj);
     }
@@ -44,7 +44,7 @@ function SudokuModal() {
     setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
   };
 
-  const props: UploadProps = {
+  const props = {
     name: 'file',
     action: 'https://sudoku-solver-detection-api.onrender.com/uploadfiles/',
     className: 'upload-list-inline',
