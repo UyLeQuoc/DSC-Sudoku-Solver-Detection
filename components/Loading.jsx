@@ -1,7 +1,7 @@
 import { Typography, Space } from 'antd';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const LoadingWrapper = styled.div`
   width: 100vw;
