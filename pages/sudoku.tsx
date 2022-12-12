@@ -126,7 +126,7 @@ function SudokuModal() {
           {/* <Divider>OR</Divider>
           <p>Select one of this image to upload</p>
           <SampleSudokuImage /> */}
-          <p className='step'>2. Click on the "Solve" button to solve the puzzle</p>
+          <p className='step'>2. Click on the &quot;Solve&quot; button to solve the puzzle</p>
         </WrappedTutorial> 
       </WrappedContainer>
       <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
