@@ -35,6 +35,8 @@ const LoadingWrapper = styled.div`
 
     @media (max-width: 1180px) {
       font-size: 15px;
+      font-style: italic;
+      font-weight: 400;
     }
   }
   
@@ -60,7 +62,7 @@ export default function Loading(){
         wrapper="span" // Animation will be rendered as a <span>
         repeat={Infinity} // Repeat this Animation Sequence infinitely
       />
-        <Typography.Text className='slogan'>"Bridging the Gap between Theory and Practice"</Typography.Text>
+        <Typography.Text className='slogan'>&quot;Bridging the Gap between Theory and Practice&quot;</Typography.Text>
       </Space>
     </LoadingWrapper>
   )
