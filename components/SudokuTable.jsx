@@ -6,7 +6,7 @@ function SudokuTable({ sudokuData, sudokuSolveData, handleSolve }) {
   return (
     <>
       <WrappedSudokuTable>
-          <h2>Sudoku Solver Detection</h2>
+          <h2 className='title'>Sudoku Solver Detection</h2>
           {
             !sudokuSolveData ? (
               <>
@@ -50,7 +50,7 @@ function SudokuTable({ sudokuData, sudokuSolveData, handleSolve }) {
               </>
             )
           }
-          <Button type='primary' onClick={() => handleSolve()}>Solve</Button>
+          <Button className="button" type='primary' onClick={() => handleSolve()}>Solve</Button>
         </WrappedSudokuTable>
     </>
   )
@@ -63,8 +63,15 @@ const WrappedSudokuTable = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 20px 0;
   /* width: 450px; */
 
+  .title{
+    font-size: 17px;
+  }
+  .button{
+    margin-top: 10px;
+  }
   .sudoku-row:nth-of-type(3), .sudoku-row:nth-of-type(6){
     margin-bottom: 4px;
   }
@@ -81,6 +88,12 @@ const WrappedSudokuTable = styled.div`
     font-weight: 500;
     margin: 1px;
     color: #002234;
+
+    @media (max-width: 500px) {
+      width: 20px;
+      height: 20px;
+      font-size: 15px;
+    }
   }
   .sudoku-cell.primary{
     background-color: #002234;

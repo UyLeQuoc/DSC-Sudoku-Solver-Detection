@@ -18,6 +18,26 @@ const LoadingWrapper = styled.div`
   align-items: center;
   color: '#002333';
   z-index: 100;
+
+  .text-animation{
+    font-size: 25px;
+    font-weight: 500;
+
+    @media (max-width: 1180px) {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+  }
+
+  .slogan{
+    font-size: 20px;
+
+    @media (max-width: 1180px) {
+      font-size: 15px;
+    }
+  }
+  
 `
 
 export default function Loading(){
@@ -36,11 +56,11 @@ export default function Loading(){
         1000,
         ]}
         speed={30} // Custom Speed from 1-99 - Default Speed: 40
-        style={{ fontSize: '25px', fontWeight: 'bold' }}
+        className="text-animation"
         wrapper="span" // Animation will be rendered as a <span>
         repeat={Infinity} // Repeat this Animation Sequence infinitely
       />
-        <Typography.Text style={{fontSize:'20px'}}>"Bridging the Gap between Theory and Practice"</Typography.Text>
+        <Typography.Text className='slogan'>"Bridging the Gap between Theory and Practice"</Typography.Text>
       </Space>
     </LoadingWrapper>
   )

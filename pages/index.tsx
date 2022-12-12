@@ -68,7 +68,7 @@ const Content = styled.div`
       max-width: 500px;
       pointer-events: auto;
 
-      @media (max-width: 778px) {
+      @media (max-width: 768px) {
         font-size: 35px;
       }
     }

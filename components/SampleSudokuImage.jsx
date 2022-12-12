@@ -10,7 +10,7 @@ const WrappedSampleSudokuImage = styled.div`
 function SampleSudokuImage() {
   return (
     <WrappedSampleSudokuImage>
-      123
+      
     </WrappedSampleSudokuImage>
   )
 }

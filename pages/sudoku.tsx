@@ -17,7 +17,7 @@ const getBase64 = (file): Promise<string> =>
 
 const WrappedContainer = styled.div`
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: space-around;
 
   .upload-list-inline{
@@ -109,9 +109,10 @@ function SudokuModal() {
         <Image src="/DSC_LOGO.png" alt="DSC Logo" width={100} height={60} />
       </Link>
       <WrappedContainer>
+        <SudokuTable sudokuData={sudokuData} sudokuSolveData={sudokuSolveData} handleSolve={() => handleSolve(sudokuData)}/>
         <WrappedTutorial>
           <h2>How to use</h2>
-          <p>1. Click on the "Upload Image" button to upload an image of a sudoku puzzle</p>
+          <p className='step'>1. Upload an image of a sudoku puzzle</p>
           <Upload.Dragger {...props}>
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
@@ -122,12 +123,11 @@ function SudokuModal() {
               band files
             </p>
           </Upload.Dragger>
-          <Divider>OR</Divider>
+          {/* <Divider>OR</Divider>
           <p>Select one of this image to upload</p>
-          <SampleSudokuImage />
-          <p>2. Click on the "Solve" button to solve the puzzle</p>
+          <SampleSudokuImage /> */}
+          <p className='step'>2. Click on the "Solve" button to solve the puzzle</p>
         </WrappedTutorial> 
-        <SudokuTable sudokuData={sudokuData} sudokuSolveData={sudokuSolveData} handleSolve={() => handleSolve(sudokuData)}/>
       </WrappedContainer>
       <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
         <img
@@ -154,21 +154,32 @@ const WrrapedPageBackground = styled.div`
   justify-content: center;
   position: relative;
   background: #07FF8A;
-
+  overflow-x: hidden;
 `
 
 const WrappedPage = styled.div`
   width: 90%;
-  margin: 50px 0;
-  height: 1600px;
-  padding: 20px;
+  /* margin: 50px 0; */
+  padding: 40px;
   background-color: white;
   border-radius: 50px;
   overflow-x: hidden;
 
+  @media (max-width: 1180px) {
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
 `
 
 const WrappedTutorial = styled.div`
-  max-width: 60%;
+  max-width: 400px;
+  padding: 0 20px;
+
+  .step{
+    margin-top: 20px;
+  }
 `
 
