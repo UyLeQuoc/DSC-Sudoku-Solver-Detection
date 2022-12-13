@@ -63,7 +63,7 @@ const Content = styled.div`
 
     .main-title{
       font-weight: 900;
-      font-size: 50px;
+      font-size: 60px;
       margin: 0;
       max-width: 500px;
       pointer-events: auto;
@@ -73,11 +73,25 @@ const Content = styled.div`
       }
     }
 
+    .sub-title{
+      font-weight: 900;
+      font-size: 50px;
+      margin: 0;
+      max-width: 500px;
+      pointer-events: auto;
+
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+    
+
     .description{
       font-size: 16px;
       max-width: 600px;
       pointer-events: auto;
       font-weight: 400;
+      margin-top: 10px;
     }
   }
 `
@@ -124,10 +138,10 @@ export default function Home() {
           <div className="body">
             <div>
               <Typography.Title className='main-title' level={1}>Sudoku</Typography.Title>
-              <Typography.Title className='main-title' level={1}>Solver Detection</Typography.Title>
+              <Typography.Title className='sub-title' level={1}>Solver Detection</Typography.Title>
             </div>
             <Typography.Paragraph className='description'>
-              Using OpenAI 
+              Powered by OpenCV and TensorFlow 2.0, with back-tracking algorithm
             </Typography.Paragraph>
             <Link href="/sudoku">
               <WrappedButton>
@@ -149,7 +163,7 @@ const WrappedButton = styled.button`
   color: white;
   font-size: 14px;
   position: relative;
-  margin: 10px 0;
+  margin: 10px 7px;
   transition: all 1s ease-in-out;
   border: #002234 solid 1px;
   cursor: pointer;
@@ -162,7 +176,7 @@ const WrappedButton = styled.button`
     position: absolute;
     color: white;
     top: -7px;
-    left: -7px;
+    left: -6px;
     width: 119px;
     height: 38px;
     background-color: #002234;
