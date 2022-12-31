@@ -71,6 +71,16 @@ const WrappedSudokuTable = styled.div`
   }
   .button{
     margin-top: 10px;
+    background-color: #07FF8A;
+    color: #002234;
+    font-family: 'Zen Dots', cursive;
+
+    :hover{
+      opacity: 0.5;
+      background-color: #07FF8A;
+      color: #002234;
+    }
+
   }
   .sudoku-row:nth-of-type(3), .sudoku-row:nth-of-type(6){
     margin-bottom: 4px;

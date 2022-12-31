@@ -9,19 +9,20 @@ const LoadingWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #07FF8A;
+  background-color: #002333;
   /* opacity: 0.5; */
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   padding: 100px 0;
   align-items: center;
-  color: '#002333';
+  color: '#07FF8A';
   z-index: 100;
 
   .text-animation{
     font-size: 25px;
     font-weight: 500;
+    color: #07FF8A;
 
     @media (max-width: 1180px) {
       font-size: 20px;
@@ -32,6 +33,7 @@ const LoadingWrapper = styled.div`
 
   .slogan{
     font-size: 20px;
+    color: #07FF8A;
 
     @media (max-width: 1180px) {
       font-size: 15px;

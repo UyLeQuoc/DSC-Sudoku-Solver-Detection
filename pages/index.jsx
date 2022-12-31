@@ -6,7 +6,7 @@ import Spline from '@splinetool/react-spline'
 import Loading from '../components/Loading';
 import { Typography } from 'antd';
 import SocialContact from '../components/SocialContact';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const AppWrapper = styled.div`
   position: relative;
@@ -67,6 +67,7 @@ const Content = styled.div`
       margin: 0;
       max-width: 500px;
       pointer-events: auto;
+      color: #002333;
 
       @media (max-width: 768px) {
         font-size: 35px;
@@ -79,6 +80,7 @@ const Content = styled.div`
       margin: 0;
       max-width: 500px;
       pointer-events: auto;
+      color: #002333;
 
       @media (max-width: 768px) {
         font-size: 30px;
@@ -92,12 +94,15 @@ const Content = styled.div`
       pointer-events: auto;
       font-weight: 400;
       margin-top: 10px;
+      color: #002333;
     }
   }
 `
 
 
 export default function Home() {
+  const router = useRouter();
+
   console.log("re-render");
 
   const [isLoading, setIsLoading] = useState(true);
@@ -143,11 +148,10 @@ export default function Home() {
             <Typography.Paragraph className='description'>
               Powered by OpenCV and TensorFlow 2.0, with back-tracking algorithm
             </Typography.Paragraph>
-            <Link href="/sudoku">
-              <WrappedButton>
-                Get Started!
-              </WrappedButton>
-            </Link>
+            
+              <WrappedButton onClick={() => {
+                router.push('/sudoku');
+              }} />
             <SocialContact />
           </div>
         </Content>
@@ -157,6 +161,8 @@ export default function Home() {
 }
 
 const WrappedButton = styled.button`
+  width: 119px;
+  height: 38px;
   padding: 10px 20px;
   background-color: #07FF8A;
   box-shadow: 0px 15px 20px rgba(7, 255, 138, 0.4);
